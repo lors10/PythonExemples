@@ -59,3 +59,20 @@ def contoArovescia(n):
 
 
 print(contoArovescia(5)) # stampa 5, 4, 3, 2, 1, Via!
+
+
+# funzioni produttive
+#
+# funzioni che restituiscono un valore (tramite return)
+
+# esempio
+
+import math
+
+def area(raggio):
+    a = math.pi * raggio**2
+
+    return a    # con il return in fase di runtime non verrà restituito 'None' ma il valore della variabile che passo
+
+print(area(10))     # stampo 314.159...
+
