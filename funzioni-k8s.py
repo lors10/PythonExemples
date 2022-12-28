@@ -23,6 +23,12 @@ def _get_schedulable_node():
 
     #print(available_nodes)
 
+
+    # QUESTA E' LA FUNZIONE CHE DEVO SOSTITUIRE NELL'ALTRO CODICE (DA PROVARE)
+    # IN QUESTO MODO INVECE DI RESTITUIRE UN NODO RANDOMICO A CUI ASSOCIARE IL POD
+    # SCELGO UN NODO SPECIFICO IN BASE AL NOME CHE DO IO.
+    # QUINDI VIENE FATTA UN MATCHING TRA NOME CHE DO IO E IL NOME DEL NODO
+    # CHE SI TROVA NELL'ARRAY CREATO IN PRECEDENZA (DEI NODI DISPONIBILI).
     specific_node = [item for item in available_nodes
                      if re.search("control-plane", item) is not None]
 
