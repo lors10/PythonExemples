@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+#import json
 app = Flask(__name__)
 
 @app.route("/page1")
@@ -17,8 +18,11 @@ def sched3():
     if request.method == 'GET':
         return render_template('data.json')
     if request.method == 'POST':
-        json_data = request.json
-        return json_data
+        #json_data = json.dumps(request.json)
+        json_data = str(request.json)
+        with open('templates/data.json', 'w') as myFile:
+            myFile.write(json_data)
+        return render_template('data.json')
 
 
 if __name__ == "__main__":
