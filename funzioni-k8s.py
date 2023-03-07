@@ -30,7 +30,7 @@ def _get_schedulable_node():
     # QUINDI VIENE FATTA UN MATCHING TRA NOME CHE DO IO E IL NOME DEL NODO
     # CHE SI TROVA NELL'ARRAY CREATO IN PRECEDENZA (DEI NODI DISPONIBILI).
     specific_node = [item for item in available_nodes
-                     if re.search("control-plane", item) is not None]
+                     if re.search("slave-one", item) is not None]
 
     #my_string = " ".join(my_sentence)
 
