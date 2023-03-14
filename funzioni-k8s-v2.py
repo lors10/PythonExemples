@@ -104,7 +104,7 @@ print(read_data.read())
 # per aprire due file e copiare il contenuto di uno nell'altro
 
 # per aprire i due file
-with open('folder/file.json', 'r') as firstfile, open('templates/data.json', 'a') as secondfile:
+with open('folder/file.json', 'r') as firstfile, open('templates/data.json', 'w') as secondfile:
 
     # legge il contenuto dal primo file
     for line in firstfile:
