@@ -68,7 +68,7 @@ def _get_schedulable_node():
     read_file.close()   # chiudo file.json
 
     specific_node = [item for item in avalaible_node
-                         if re.search(data['node-name'], item) is not None]
+                    if re.search(data['node-name'], item) is not None]
 
     node = " ".join(specific_node)  # trasformo oggetto in stringa
 
