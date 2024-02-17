@@ -1,111 +1,86 @@
+"""
+a function is a block statement that performs a specific tasks
 
-# chiamata di funzione
-#
-# esempio: type(42)
-# l'espressione tra parentesi è chiamata 'argomento della funzione'
-# type è il 'nome' della funzione
-# il risultato della funzione è chiamato 'valore di ritorno'
+- a function is defined using the "def" keyword
+- we can pass data("parameters") into a function
+- functions may "return data" (or can be "void")
 
-print(type(42)) # stampa il tipo di valore dell'argomento
+"""
 
+"""
 
-# funzioni matematiche
-#
-# un 'modulo' è un file che contiene una raccolta di funzioni correlate
-# prima di poter usare le funzioni di un modulo, le dobbiamo importare tramite l'istruzione 'import'
-# l'oggetto modulo contiene le funzioni e le variabili definite all'interno del modulo stesso.
-# per accedere a una funzione del modulo, bisogna specificare, nell'ordine, il nome del modulo e il nome della funzione
-# separati da un punto (notazione a punto)
+- *args: if we're unsure about the number of parameters (tuple)
 
-import math
+- keyword arguments: we can define key-value pairs
 
-gradi = 45
-radianti = gradi / 180.0 * math.pi
-print(math.sin(radianti)) # stampa 0.7071067811865475
+- **kwargs: if you're unsure about the number of keyword arguments (dictionary or arguments)
 
+- you can define default values for the parameters: so if you call the given function without
+  an argument the the default value is be used
+  
+- pass: function body can not be empty in Python. If you want to construct an empty function 
+  then yuo have to use pass
 
-# definizione di una funzione
-#
-# permette di specificare il nome di una nuova funzione e la serie di istruzioni che viene eseguita quando la funzione viene chiamata
-# 'def' è la parola chiave per la definizione di una nuova funzione
-# il nome è stampa_brani
-# le parentesi vuote indicano che la funzione non accetta alcun argomento
+"""
 
+# parameters and arguments
+def show_name(name): # parameter
 
-# esempio
+    # local variable
+    age = 10    # age è int quindi non posso concatenarlo ad una stringa (lo strasformo in stringa o ...)
 
-def stampa_brani():
-    print('Terror di tutta la foresta egli è,')
-    print("Con l'ascia in mano si sente un re.")
+    print("Name: " + name)
+    print("Age: {}".format(age))
 
 
-#print(stampa_brani())  # stampa:
-                            # Terror di tutta la foresta egli è,
-                            # Con l'ascia in mano si sente un re.
+show_name("Lorenzo") # argument
 
-def ripeti_brani():
-    stampa_brani()
-    stampa_brani()
+def show_name_age(name, age): # positional parameter: the order does matter
 
-#print(ripeti_brani())  # stampa:
-                            # Terror di tutta la foresta egli è,
-                            # Con l'ascia in mano si sente un re.
-                            # Terror di tutta la foresta egli è,
-                            # Con l'ascia in mano si sente un re.
+    print("Name: " + name)
+    print("Age: {}".format(age))
 
 
-# parametri e argomenti
-#
-# i 'parametri' sono gli argomenti che vengono passati alla funzione
-#
+show_name_age("Lorenzo", 10) # argument
 
-# esempio
+def show_name_age_one(name, age): # keyword: the order does not matter
 
-def stampa2volte(stringa):
-    print(stringa)
-    print(stringa)
+    print("Name: " + name)
+    print("Age: {}".format(age))
 
 
-#print(stampa2volte('Ciao'))    # stampa:
-                                    # Ciao
-                                    # Ciao
+show_name_age_one(age=10, name="Lorenzo") # argument
 
-#print(stampa2volte('ciao'*2))  # stampa
-                                    # ciaociao
-                                    # ciaociao
+def show_names(*names): # positional parameter: the order does matter
 
-#print(stampa2volte('Pippo' + 'Pluto'))     # stampa:
-                                                # PippoPluto
-                                                # PippoPluto
+    # tuple: one dimensional array so we can use indexes
 
+    # print names manually
+    #print(names[0])
+    #print(names[1])
+    #print(names[2])
 
-# quando create una variabile in una funzione, essa è locale, cioè esiste solo all'interno della funzione.
+    # print names dinamically
+    for index in range(len(names)):
+        print(names[index])
 
-# esempio
+show_names("Cesare", "Ida", "Andrea", "Lorenzo")
 
-cat = 'Ciao'    # variabile cat con scope globale
+# keyword argument - ** to rapresent an arbitrary number of keyword arguments
+def funct_double_asterisc(**params):
+    # so it is a dictionary with key and value pairs
+    print(params["fname"])
+    print(params["fsurname"])
+    print(params["fage"])
+    print(params["fgender"])
 
-def cat2volte(parte1, parte2):
-    cat = parte1 + parte2  # variabile cat con scope locale
-    stampa2volte(cat)
-
-var1 = 10
-var2 = 20
-
-stringa_uno = 'Lorenzo'
-stringa_due = 'Salvi'
-
-print(cat2volte(var1,var2))     # stampa:
-                                    # 30
-                                    # 30
-
-print(cat2volte(stringa_uno, stringa_due))      # stampa:
-                                                    # LorenzoSalvi
-                                                    # LorenzoSalvi
-
-print(cat)  # stampa: Ciao
+funct_double_asterisc(fname="Lorenzo", fsurname="Salvi", fage=20, fgender="male")
 
 
+# define a function without a body
+def function_no_body(name, surname):
+    pass
 
-
-
+print("Before calling the fuction...")
+function_no_body("Lorenzo", "Salvi")
+print("After calling the function...")
