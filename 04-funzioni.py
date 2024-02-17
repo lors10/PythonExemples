@@ -84,3 +84,69 @@ def function_no_body(name, surname):
 print("Before calling the fuction...")
 function_no_body("Lorenzo", "Salvi")
 print("After calling the function...")
+
+"""
+
+- return: we can return values from a given function
+
+- yield: can produce a sequence of values (object), It can resume execution!
+
+"""
+
+# return single variable from a function
+def sum_function(num1, num2):
+
+    res = num1 + num2
+    return res
+
+def mul_function(num1, num2):
+
+    res = num1 * num2
+    return res
+
+result_sum = sum_function(10, 20)
+result_mul = mul_function(10, 20)
+
+print(result_sum)
+print(result_mul)
+
+# return multiple variables from a function
+def operation(x):
+
+    # even value
+    if x % 2 == 0:
+        return True, 1
+    # odd value
+    else:
+        return False, -1
+
+
+result_op = operation(10) # is a tuple
+
+#print(result_op)
+print(result_op[0])
+print(result_op[1])
+
+def check_numbers():
+
+    for number in range(0, 10, 1):
+
+        if number % 2 == 0:
+            #return number
+            yield number
+
+
+for num in check_numbers():
+    print(num)
+
+"""
+
+built-in functions:
+- print
+- int(): convert string to int
+- type(): for print the type
+- str()
+- range(): for generate the data structure containing the given items
+- pow(): more efficient than **. It's used for doind x^y
+
+"""
