@@ -6,3 +6,19 @@ Array and lists => lists are basically dynamic arrays (size of array can change)
 - The items of the arrays are located right next to each other in the main memory (RAM) - they can be accessed
   by the index
 
+LInked lists
+
+Tuples are very similat to lists but THE ITEMS CAN NOT BE CHANGED
+Tuples are immutable object
+
+Mutable objects: are
+- lists
+- sets
+- dicts
+- custom objects
+
+Immutable objects: are
+- int
+- float
+- boolean
+- tuple data structure
