@@ -1,0 +1,8 @@
+DATA STRUCTURES IN PYTHON
+
+Array and lists => lists are basically dynamic arrays (size of array can change) (they are not real arrays)
+
+- Arrays are data structures where all the items are identified with an index (an integer starting with 0).
+- The items of the arrays are located right next to each other in the main memory (RAM) - they can be accessed
+  by the index
+
