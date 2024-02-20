@@ -1,0 +1,16 @@
+
+
+Python is an Object-Oriented programming language:
+
+- Modularity: provides object-based separations of code and behavior
+
+- Extensibility: objects can be extended to include new behaviors and attributes
+
+- Reusability: objects can be reused everywhere in the application
+
+---------------------------------
+
+- classes: are templates for creating objects. We create the variables, functions and the behaviors
+           in classes - and then we can instantiate the given class
+
+- objects: are instantiated classes
